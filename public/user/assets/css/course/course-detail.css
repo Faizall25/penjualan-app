@@ -1,0 +1,292 @@
+@import url("../variables.css");
+
+.course {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column-reverse;
+
+    gap: 20px;
+}
+
+.course main {
+    flex: 1;
+    min-height: 150vh;
+}
+
+.course aside {
+    background-color: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(10px);
+    position: relative;
+    min-height: 200px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    border-radius: 12px;
+    margin-top: 170px;
+    padding: 1.5rem 1.5rem 1.25rem;
+
+    transition: all 0.3s ease 0s;
+}
+.course aside::after {
+    content: "";
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background: var(--primary-10);
+    z-index: -5;
+    transition: all 0.3s ease 0s;
+}
+
+@keyframes circleAnimation {
+    0% {
+        transform: scale(0.7);
+        transform: translateX(100%) translateY(-100%);
+    }
+    50% {
+        transform: scale(1.2);
+        transform: translateX(-150%) translateY(200%);
+    }
+    100% {
+        background-color: var(--primary-50);
+        transform: scale(1.5);
+        transform: translateX(100%) translateY(-100%);
+    }
+}
+
+.course aside::after {
+    animation: circleAnimation 15s forwards;
+}
+
+.course aside:hover {
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+.course .course-sidebar-info ul {
+    margin: 1.5rem 0 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.course-sidebar-info ul li {
+    display: flex;
+    gap: 14px;
+    align-items: center;
+}
+.course-sidebar-info ul li .fa {
+    color: var(--primary-color);
+}
+.course aside .membership p {
+    line-height: normal;
+    margin: 0.5rem 0;
+}
+.course .membership .membership-btn {
+    background: var(--primary-color);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+.course .membership .membership-btn:hover {
+    background: var(--primary-darker);
+}
+
+/* ===================================================================================
+    hero section
+ */
+
+.course main .hero {
+    padding: 30px 0 100px 0;
+    min-height: 0;
+}
+.course .hero .breadcrumbs {
+    margin-bottom: 1rem;
+}
+.course .hero .thumbnail {
+    margin-bottom: 1.5rem;
+    width: 100%;
+    max-height: 420px;
+    border-radius: 28px;
+    overflow: hidden;
+}
+.hero .thumbnail img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.course .hero .course-header {
+    margin-bottom: 30px;
+}
+.course .hero .course-details {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: start;
+    gap: 28px;
+}
+.course .hero .course-details .detail {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+.course .hero .course-details .detail i {
+    color: var(--primary-50);
+    font-size: 20px;
+}
+.course-details .left {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    flex-wrap: wrap;
+}
+.course-details .right {
+    background: transparent;
+    max-width: 400px;
+    width: 80%;
+    border: 1px solid var(--secondary-10);
+    border-radius: 10px;
+    margin: 0 0 20px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.course .hero .course-details .course-rank .wrapper {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.course .right .rank-details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.course .right .rank-details span:not(:last-child) {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--secondary-10);
+}
+.course .right .rank-detail li {
+    list-style: disc;
+    margin-left: 32px;
+}
+
+/* =============================================================================
+    Course content section
+*/
+.course .course-content .header button {
+    font-weight: 600;
+    padding: 10px 15px;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    background: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.course-content .video {
+    min-height: 280px;
+}
+
+.course .course-content .content-accordion {
+    border: 1px solid var(--secondary-10);
+    border-radius: 28px;
+    padding: 1rem 0;
+}
+
+.course .content-accordion .item {
+    padding: 1rem 1.5rem;
+}
+.course .content-accordion .item:not(:last-child) {
+    border-bottom: 1px solid var(--secondary-10);
+}
+.course .content-accordion .item .body {
+    padding: 1rem 0 1rem 1.5rem;
+    font-size: 14px;
+    line-height: 28px;
+}
+.course .content-accordion .item .sub-courses li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 6px;
+    padding: 4px 8px;
+    transition: all 0.3s ease 0s;
+    border-radius: 12px;
+    background-color: white;
+}
+.course .content-accordion .sub-courses li:hover,
+.course .content-accordion .sub-courses li.active {
+    background-color: var(--secondary-10);
+}
+.course .content-accordion .sub-courses li:hover a p,
+.course .content-accordion .sub-courses li.active a p,
+.course .content-accordion .sub-courses li.active a i,
+.course .content-accordion .sub-courses li:hover a i {
+    color: var(--primary-color);
+}
+
+.course .sub-courses li a {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 10px;
+}
+
+.course .sub-courses li a .fa {
+    color: var(--secondary-50);
+    font-size: 18px;
+}
+
+.content .decor-1-course {
+    position: absolute;
+    top: 900px;
+    right: 0;
+    width: 40%;
+    height: 20%;
+    background: #f1f0fe;
+    z-index: -1;
+    border-top-left-radius: 200px;
+    border-bottom-left-radius: 200px;
+}
+
+@media (min-width: 992px) {
+    .course {
+        display: flex;
+        flex-direction: row;
+    }
+
+    .course aside {
+        width: 25%;
+        height: fit-content;
+
+        position: -webkit-sticky;
+        position: sticky;
+        top: 170px;
+    }
+
+    .course .hero .course-details {
+        flex-direction: row-reverse;
+    }
+
+    /* =============================================================================
+        hero section
+     */
+    .course main .hero {
+        padding: 170px 0 100px 0;
+    }
+
+    /* =============================================================================
+        course section
+    */
+    .course-content .video {
+        max-height: 536px;
+    }
+}

@@ -1,0 +1,28 @@
+:root { 
+    --primary-color: rgb(0, 150, 65);
+    --primary-darker: rgb(2, 122, 54);
+    --primary-10: rgba(0, 150, 65, 0.1);
+    --primary-30: rgba(0, 150, 65, 0.3);
+    --primary-50: rgba(0, 150, 65, 0.5);
+    
+    --secondary-color: rgb(20, 20, 20);
+    --secondary-10: rgba(20, 20, 20, 0.1);
+    --secondary-30: rgba(20, 20, 20, 0.3);
+    --secondary-50: rgba(20, 20, 20, 0.5);
+
+    --light-purple: #f1f0fe;
+    
+    --white: #f1f0fe;
+
+    --font-primary: "Nunito", "sans-serif";
+}
+
+.text-primary { 
+    color: var(--primary-color);
+}
+
+.bg-primary { 
+    background-color: var(--primary-color);
+}
+
+

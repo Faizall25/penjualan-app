@@ -1,0 +1,9 @@
+.edit__profile { 
+    font-family: var(--font-primary);
+}
+
+.profile-picture {
+    max-width: 250px;
+    max-height: 250px;
+}
+

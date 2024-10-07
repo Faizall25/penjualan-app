@@ -1,0 +1,57 @@
+.hide { 
+    display: none;
+}
+.profile .profile__main{
+    width: 100%; 
+    background-color: white;   
+}
+
+.profile-picture {
+    width: 100px;
+    height: 100px;
+}
+
+.profile__picture__edit {
+    width: 150px;
+    height: 150px;
+}
+
+.active__courses ul {
+    max-width: 100%;
+}
+
+.active__courses ul li {
+    background: var(--primary-10);
+    border-radius: 10px;
+    padding: 8px 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.active__courses ul li:not(:last-child) {
+    margin-bottom: 1rem;
+}
+
+.active__courses ul a {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.active__courses__icon {
+    width: 40px;
+    height: 40px;
+    overflow: hidden;
+}
+
+
+@media (min-width: 768px) {
+    .active__courses ul {
+        max-width: 60%;
+    }
+}
+
+@media (min-width: 992px) {
+
+}

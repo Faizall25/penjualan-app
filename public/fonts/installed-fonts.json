@@ -1,0 +1,25 @@
+{
+    "pacifico": {
+        "normal": "pacifico_normal_1e577532fe24ad05c19ba8a308e4e1c5"
+    },
+    "raleway": {
+        "100": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_100_8fe2009ef4a716dab20e122f8a4caacb",
+        "100_italic": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_100_italic_291fdb72f416d23c33e8b19dcb3876de",
+        "200": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_200_3af2ac0bd27c43e23d97976250d5a5cd",
+        "200_italic": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_200_italic_786cfcd28511d11ad5cfde3f1fadba10",
+        "300": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_300_ed7ac1ef763657b9141c88f52b987a05",
+        "300_italic": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_300_italic_cec14ee7d640cca952fe6dbc127588d6",
+        "normal": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_normal_3c0165704b5a65ece212b510a6add77d",
+        "italic": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_italic_a44ab93ea3632ef1788a333732acb0cc",
+        "500": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_500_dc578ae74fabff9736e718c7af7d3b08",
+        "500_italic": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_500_italic_4ecc1e02aa77a73fa0c60ba39698ba5f",
+        "600": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_600_e7868d428acfe0e42c1c8a5f24c2cb18",
+        "600_italic": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_600_italic_174ce72fc5b1b764a8b6baf8058283ee",
+        "bold": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_bold_fb44a3b891e579ef61530d2b1945ede2",
+        "bold_italic": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_bold_italic_14896983eb8f35ca4873f9b36ef1d983",
+        "800": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_800_4b1cfe7a2d8c6ca639ab269eeaf779ef",
+        "800_italic": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_800_italic_e5c4db9cf25dcd7696447e864d80d635",
+        "900": "\/home\/dungeoni\/staging-dungeon\/dongeon\/public\/fonts\/raleway_900_4e9a7d48c92cbc3274a32b66c4d08d59",
+        "900_italic": "raleway_900_italic_90db16a89eb35e9890352c1b0af87a76"
+    }
+}

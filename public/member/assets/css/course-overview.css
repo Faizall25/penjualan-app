@@ -1,0 +1,145 @@
+.course__overview { 
+}
+
+.course__overview main {
+    position: relative;
+    height: 500px;
+}
+
+.overview__wrapper {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 12px;
+}
+
+.overview__content { 
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--secondary-10);
+    
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    transition: all 0.2s ease-in-out;
+    transition-behavior: smooth;
+    padding-bottom: 20px;
+}
+
+.overview__content:hover .wrapper { 
+    transition: all 0.2s ease-in-out;
+    transition-behavior: smooth;
+    transform: scale(1.2);
+    opacity: 1;
+}
+
+.overview__content:hover { 
+    backdrop-filter: blur(10px);
+}
+
+.overview__content .wrapper { 
+    opacity: 0.8;
+    max-width: 80%;
+    padding: 20px;
+    border-radius: 12px;
+    backdrop-filter: blur(5px);
+
+}
+
+.overview__content .wrapper h2 { 
+    color: var(--primary-color);
+}
+.overview__content .wrapper p { 
+    color: white;
+}
+
+.course__detail {
+    flex: 1;
+    background-color: white;
+}
+
+.course__detail__content { 
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: start;
+    gap: 28px;
+}
+
+.course__detail__content .left {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.course__detail__content .left .detail { 
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.course__detail__content .left .detail p { 
+    margin-bottom: 0;
+}
+
+.course__detail__content .detail i { 
+    color: var(--primary-50);
+    font-size: 20px;
+}
+
+.course__detail__content .right { 
+    background: transparent;
+    max-width: 400px;
+    border: 1px solid var(--secondary-10);
+    border-radius: 10px;
+    margin: 0 0 20px;
+    padding: 0;
+    overflow: hidden;
+}
+
+.course__detail__content .course-rank .icon__wrapper {
+    width: 50px;
+    height: 50px;
+    overflow: hidden;
+}
+
+.course__detail__content .right .rank-details { 
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.course__detail__content .rank-details span:not(:last-child) {
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--secondary-10);
+}
+.course__detail__content .rank-detail li {
+    list-style: disc;
+    margin-left: 32px;
+}
+
+
+@media (min-width: 768px) { 
+    .course__overview main {
+        max-height: 600px;
+    }
+
+    .wrapper { 
+        max-width: 500px;
+    }
+    
+}
+
+@media (min-width: 992px) {
+    .course__detail__content { 
+        flex-direction: row-reverse;
+    }
+}
+
+@media (min-width: 1440px) {
+}
