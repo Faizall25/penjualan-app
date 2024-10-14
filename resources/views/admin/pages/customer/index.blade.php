@@ -1,3 +1,5 @@
+@extends('admin.partials.index')
+
 @section('head')
 {{-- editor --}}
 <link rel="stylesheet" href="https://cdn.ckeditor.com/ckeditor5/42.0.0/ckeditor5.css" />
@@ -55,8 +57,8 @@
                 @foreach ($datas as $index => $data)
                 <tr>
                     <td>{{ $index + 1 }}</td>
-                    <td>{{ $data->name }}</td>
-                    <td>{{ $data->description }}</td>
+                    <td>{{ $data->customer_name }}</td>
+                    <td>{{ $data->customer_city }}</td>
                     <td class="flex">
                         <!-- <a href="admin.category.update" x-tooltip="View" type="button" class="btn btn-warning rounded-full mr-2"><i class="bi bi-eye"></i></a> -->
                         <div x-data="modal">
@@ -66,7 +68,7 @@
                                 <div class="flex items-center justify-center min-h-screen px-4" @click.self="open = false">
                                     <div x-show="open" x-transition x-transition.duration.300 class="panel border-0 p-0 rounded-lg overflow-hidden w-full max-w-lg my-8">
                                         <div class="flex bg-[#fbfbfb] dark:bg-[#121c2c] items-center justify-between px-5 py-3">
-                                            <h5 class="font-bold text-lg">Edit Customer</h5>
+                                            <h5 class="font-bold text-lg">Customer Admin</h5>
                                         </div>
                                         <div class="p-5">
                                             <form action="{{ route('customer.update') }}" method="post" enctype="multipart/form-data">
@@ -78,13 +80,13 @@
                                                     <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
                                                         <i class="bi bi-person"></i>
                                                     </span>
-                                                    <input name="name" type="text" placeholder="{{ $data->name }}" class="form-input ltr:pl-10 rtl:pr-10" />
+                                                    <input name="name" type="text" placeholder="{{ $data->customer_name }}" class="form-input ltr:pl-10 rtl:pr-10" />
                                                 </div>
                                                 <div class="relative mb-4">
                                                     <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
                                                         <i class="bi bi-key"></i>
                                                     </span>
-                                                    <input name="description" type="text" placeholder="{{ $data->description }}" class="form-input ltr:pl-10 rtl:pr-10" />
+                                                    <input name="addres" type="text" placeholder="{{ $data->customer_city }}" class="form-input ltr:pl-10 rtl:pr-10" />
                                                 </div>
                                                 <button type="submit" class="btn btn-primary w-full">Edit
                                                     Customer</button>

@@ -9,7 +9,7 @@ $baseRoute = array_shift($routeParts);
 
 <ul class="flex space-x-2 rtl:space-x-reverse">
   <li>
-    <a href="{{ route($baseRoute . '.dashboard') }}" class="text-primary hover:underline">Dashboard</a>
+    <a href="" class="text-primary hover:underline">Dashboard</a>
   </li>
 
   @foreach ($routeParts as $index => $part)

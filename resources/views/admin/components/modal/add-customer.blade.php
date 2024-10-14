@@ -22,7 +22,7 @@
                             <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
                                 <i class="bi bi-card-text"></i>
                             </span>
-                            <input name="description" type="text" placeholder="Description" class="form-input ltr:pl-10 rtl:pr-10" required />
+                            <input name="addres" type="text" placeholder="Addres" class="form-input ltr:pl-10 rtl:pr-10" required />
                         </div>
                         <button type="submit" class="btn btn-primary w-full">Add Customer</button>
                     </form>

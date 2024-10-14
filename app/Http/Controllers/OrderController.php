@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Customer;
 use App\Models\Order;
+use App\Models\Salesmans;
 use Illuminate\Http\Request;
 
 class OrderController extends Controller
@@ -10,9 +12,19 @@ class OrderController extends Controller
     /**
      * Display a listing of the resource.
      */
-    public function index()
+    public function index(Request $request)
     {
-        //
+        $datas = Order::query();
+
+        if ($request->has('search')) {
+            $datas = $datas->search($request->search);
+        }
+
+        $customers = Customer::all();
+        $salesmans = Salesmans::all();
+        $datas = $datas->with(['salesman', 'customer'])->orderBy('id', 'desc')->paginate(5)->withQueryString();
+        // dd($datas);
+        return view('admin.pages.order.index', compact('datas', 'salesmans', 'customers'));
     }
 
     /**

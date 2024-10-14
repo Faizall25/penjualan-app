@@ -18,4 +18,11 @@ class CustomerController extends Controller
         $datas = $datas->orderBy('id', 'desc')->paginate(5)->withQueryString();
         return view('admin.pages.customer.index', compact('datas'));
     }
+
+    // public function show(Customer $customer)
+    // {
+    //     return view('admin.pages.customer.detail', compact('customer'));
+    // }
+
+
 }

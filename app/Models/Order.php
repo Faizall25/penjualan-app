@@ -16,6 +16,12 @@ class Order extends Model
         'salesman_id'
     ];
 
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('order_date', 'like', '%' . $search . '%')
+            ->orWhere('amount', 'like', '%' . $search . '%');
+    }
+
     public function customer()
     {
         return $this->belongsTo(Customer::class);
@@ -23,6 +29,6 @@ class Order extends Model
 
     public function salesman()
     {
-        return $this->belongsTo(Salesman::class);
+        return $this->belongsTo(Salesmans::class);
     }
 }

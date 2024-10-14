@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Salesman extends Model
+class Salesmans extends Model
 {
     use HasFactory;
 
@@ -14,6 +14,12 @@ class Salesman extends Model
         'salesman_city',
         'commission'
     ];
+
+    public function scopeSearch($query, $search)
+    {
+        return $query->where('salesman_name', 'like', '%' . $search . '%')
+            ->orWhere('commission', 'like', '%' . $search . '%');
+    }
 
     public function orders()
     {
