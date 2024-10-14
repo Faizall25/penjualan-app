@@ -62,13 +62,62 @@
                     <td>{{ $data->order_date }}</td>
                     <td>{{ $data->amount }}</td>
                     <td>
-                        {{ $data->customer->id ?? 'N/A' }} - {{ $data->customer->name ?? 'N/A' }}
+                        {{ $data->customer->id ?? 'N/A' }} - {{ $data->customer->customer_name ?? 'N/A' }}
                     </td>
                     <td>
-                        {{ $data->salesman->id ?? 'N/A' }} - {{ $data->salesman->name ?? 'N/A' }}
+                        {{ $data->salesman ? $data->salesman->id : 'N/A' }} - {{ $data->salesman ? $data->salesman->salesman_name : 'N/A' }}
                     </td>
                     <td class="flex">
-                        <a href="{{ route('order.show', $data->id) }}" x-tooltip="View" type="button" class="btn btn-warning rounded-full mr-2"><i class="bi bi-eye"></i></a>
+                        <!-- <a href="{{ route('order.show', $data->id) }}" x-tooltip="View" type="button" class="btn btn-warning rounded-full mr-2"><i class="bi bi-eye"></i></a> -->
+                        <div x-data="modal">
+                            <button x-tooltip="View" type="button" class="btn btn-warning rounded-full mr-2" @click="toggle"><i class="bi bi-eye"></i></button>
+
+                            <div class="fixed inset-0 bg-[black]/60 z-[999] hidden overflow-y-auto" :class="open && '!block'">
+                                <div class="flex items-center justify-center min-h-screen px-4" @click.self="open = false">
+                                    <div x-show="open" x-transition x-transition.duration.300 class="panel border-0 p-0 rounded-lg overflow-hidden w-full max-w-lg my-8">
+                                        <div class="flex bg-[#fbfbfb] dark:bg-[#121c2c] items-center justify-between px-5 py-3">
+                                            <h5 class="font-bold text-lg">Edit Order</h5>
+                                        </div>
+                                        <div class="p-5">
+                                            <form action="{{ route('order.update') }}" method="post" enctype="multipart/form-data">
+                                                @csrf
+                                                @method('put')
+                                                <input type="hidden" name="id" value="{{ $data->id }}">
+                                                <div class="relative mb-4">
+                                                    <select class="selectize" name="customer_id" required>
+                                                        @foreach($customers as $customer)
+                                                        <option value="{{ $customer->id }}">{{ $customer->customer_name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="relative mb-4">
+                                                    <select class="selectize" name="salesmans_id" multiple="multiple">
+                                                        @foreach($salesmans as $salesman)
+                                                        <option value="{{ $salesman->id }}">{{ $salesman->salesman_name }}</option>
+                                                        @endforeach
+                                                    </select>
+                                                </div>
+                                                <div class="relative mb-4">
+                                                    <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
+                                                        <i class="bi bi-person"></i>
+                                                    </span>
+                                                    <input name="order_date" type="date" placeholder="{{ $data->order_date }}" class="form-input ltr:pl-10 rtl:pr-10" />
+                                                </div>
+                                                <div class="relative mb-4">
+                                                    <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
+                                                        <i class="bi bi-key"></i>
+                                                    </span>
+                                                    <input name="amount" type="text" placeholder="{{ $data->amount }}" class="form-input ltr:pl-10 rtl:pr-10" />
+                                                </div>
+                                                <button type="submit" class="btn btn-primary w-full">Edit
+                                                    Order</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
                         <form action="{{ route('order.destroy', $data->id) }}" method="post">
                             @csrf
                             @method('delete')

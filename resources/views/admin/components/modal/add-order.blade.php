@@ -20,7 +20,7 @@
                             </select>
                         </div>
                         <div class="relative mb-4">
-                            <select class="selectize" name="salesman_id[]" multiple="multiple">
+                            <select class="selectize" name="salesmans_id[]" multiple="multiple">
                                 @foreach($salesmans as $salesman)
                                 <option value="{{ $salesman->id }}">{{ $salesman->salesman_name }}</option>
                                 @endforeach

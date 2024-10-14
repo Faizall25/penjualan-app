@@ -16,13 +16,13 @@
                             <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
                                 <i class="bi bi-card-heading"></i>
                             </span>
-                            <input name="name" type="text" placeholder="Name" class="form-input ltr:pl-10 rtl:pr-10" required />
+                            <input name="salesman_name" type="text" placeholder="Name" class="form-input ltr:pl-10 rtl:pr-10" required />
                         </div>
                         <div class="relative mb-4">
                             <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
                                 <i class="bi bi-card-text"></i>
                             </span>
-                            <input name="addres" type="text" placeholder="Addres" class="form-input ltr:pl-10 rtl:pr-10" required />
+                            <input name="salesman_city" type="text" placeholder="Addres" class="form-input ltr:pl-10 rtl:pr-10" required />
                         </div>
                         <div class="relative mb-4">
                             <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">

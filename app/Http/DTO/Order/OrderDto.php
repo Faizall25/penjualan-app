@@ -9,9 +9,9 @@ class OrderDto
     public function __construct(
         public ?int $id = 0,
         public ?string $order_date = null,
-        public ?Decimal $amount = 0.0,
+        public ?float $amount = 0.0,
         public ?int $customer_id = 0,
-        public ?int $salesman_id = 0
+        public ?int $salesmans_id = 0
     ) {}
 
     public function toArray(): array
@@ -21,7 +21,7 @@ class OrderDto
             'order_date' => $this->order_date,
             'amount' => $this->amount,
             'customer_id' => $this->customer_id,
-            'salesman_id' => $this->salesman_id,
+            'salesmans_id' => $this->salesmans_id,
         ];
     }
 
@@ -32,7 +32,7 @@ class OrderDto
             order_date: $model->order_date,
             amount: $model->amount,
             customer_id: $model->customer_id,
-            salesman_id: $model->salesman_id,
+            salesmans_id: $model->salesmans_id,
         );
     }
 }

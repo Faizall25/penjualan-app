@@ -10,7 +10,7 @@ class SalesmanDto
         public ?int $id = 0,
         public ?string $salesman_name = '',
         public ?string $salesman_city = '',
-        public ?Decimal $commission = 0.0
+        public ?float $commission = 0.0
     ) {}
 
     public function toArray(): array

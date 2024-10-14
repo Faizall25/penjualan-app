@@ -80,13 +80,13 @@
                                                     <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
                                                         <i class="bi bi-person"></i>
                                                     </span>
-                                                    <input name="name" type="text" placeholder="{{ $data->customer_name }}" class="form-input ltr:pl-10 rtl:pr-10" />
+                                                    <input name="customer_name" type="text" placeholder="{{ $data->customer_name }}" class="form-input ltr:pl-10 rtl:pr-10" />
                                                 </div>
                                                 <div class="relative mb-4">
                                                     <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
                                                         <i class="bi bi-key"></i>
                                                     </span>
-                                                    <input name="addres" type="text" placeholder="{{ $data->customer_city }}" class="form-input ltr:pl-10 rtl:pr-10" />
+                                                    <input name="customer_city" type="text" placeholder="{{ $data->customer_city }}" class="form-input ltr:pl-10 rtl:pr-10" />
                                                 </div>
                                                 <button type="submit" class="btn btn-primary w-full">Edit
                                                     Customer</button>

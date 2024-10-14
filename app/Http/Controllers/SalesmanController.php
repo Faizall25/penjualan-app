@@ -2,14 +2,14 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\DTO\Salesman\SalesmanDto;
+use App\Http\Services\Salesman\AddSalesmanService;
+use App\Http\Services\Salesman\EditSalesmanService;
 use App\Models\Salesmans;
 use Illuminate\Http\Request;
 
 class SalesmanController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index(Request $request)
     {
         $datas = Salesmans::query();
@@ -18,48 +18,56 @@ class SalesmanController extends Controller
             $datas = $datas->where('salesman_name', 'like', '%' . $request->search . '%');
         }
 
-        $datas = $datas->orderBy('id', 'desc')->paginate(5)->withQueryString();
+        $datas = $datas->orderBy('id', 'asc')->paginate(5)->withQueryString();
         return view('admin.pages.salesman.index', compact('datas'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function create()
-    {
-        //
-    }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(Request $request)
     {
-        //
+        $request->validate([
+            'salesman_name' => 'required',
+            'salesman_city' => 'required',
+            'commission' => 'required',
+        ]);
+
+        try {
+            $salesmanDto = new SalesmanDto(
+                salesman_name: $request->salesman_name,
+                salesman_city: $request->salesman_city,
+                commission: $request->commission,
+            );
+            AddSalesmanService::handle($salesmanDto);
+
+            return redirect()->back()->with('success', 'Data Berhasil Disimpan');
+        } catch (\Exception $th) {
+            return redirect()->back()->with('error', 'Data Gagal Disimpan: ' . $th->getMessage());
+        }
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(Salesmans $salesmans)
+    public function update(Request $request)
     {
-        //
-    }
+        $request->validate([
+            'id' => 'required|exists:salesmans,id',
+            'salesman_name' => 'required',
+            'salesman_city' => 'required',
+            'commission' => 'required'
+        ]);
 
-    /**
-     * Show the form for editing the specified resource.
-     */
-    public function edit(Salesmans $salesmans)
-    {
-        //
-    }
+        try {
+            $salesmans = Salesmans::findOrFail($request->id);
 
-    /**
-     * Update the specified resource in storage.
-     */
-    public function update(Request $request, Salesmans $salesmans)
-    {
-        //
+            $salesmasDto = new SalesmanDto(
+                id: $request->id,
+                salesman_name: $request->salesman_name,
+                salesman_city: $request->salesman_city,
+                commission: $request->commission,
+            );
+
+            EditSalesmanService::handle($salesmasDto);
+            return redirect()->back()->with('success', 'Data berhasil diubah');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Data gagal diubah: ' . $th->getMessage());
+        }
     }
 
     /**
@@ -67,6 +75,11 @@ class SalesmanController extends Controller
      */
     public function destroy(Salesmans $salesmans)
     {
-        //
+        try {
+            $salesmans->delete();
+            return redirect()->back()->with('success', 'Data berhasil dihapus');
+        } catch (\Throwable $th) {
+            return redirect()->back()->with('error', 'Data gagal dihapus');
+        }
     }
 }

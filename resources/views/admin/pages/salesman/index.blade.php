@@ -82,13 +82,13 @@
                                                     <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
                                                         <i class="bi bi-person"></i>
                                                     </span>
-                                                    <input name="name" type="text" placeholder="{{ $data->salesman_name }}" class="form-input ltr:pl-10 rtl:pr-10" />
+                                                    <input name="salesman_name" type="text" placeholder="{{ $data->salesman_name }}" class="form-input ltr:pl-10 rtl:pr-10" />
                                                 </div>
                                                 <div class="relative mb-4">
                                                     <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
                                                         <i class="bi bi-key"></i>
                                                     </span>
-                                                    <input name="addres" type="text" placeholder="{{ $data->salesman_city }}" class="form-input ltr:pl-10 rtl:pr-10" />
+                                                    <input name="salesman_city" type="text" placeholder="{{ $data->salesman_city }}" class="form-input ltr:pl-10 rtl:pr-10" />
                                                 </div>
                                                 <div class="relative mb-4">
                                                     <span class="absolute ltr:left-3 rtl:right-3 top-1/2 -translate-y-1/2 dark:text-white-dark">
@@ -97,7 +97,7 @@
                                                     <input name="commission" type="text" placeholder="{{ $data->commission }}" class="form-input ltr:pl-10 rtl:pr-10" />
                                                 </div>
                                                 <button type="submit" class="btn btn-primary w-full">Edit
-                                                    Commission</button>
+                                                    Salesman</button>
                                             </form>
                                         </div>
                                     </div>

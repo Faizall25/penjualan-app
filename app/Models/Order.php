@@ -9,11 +9,12 @@ class Order extends Model
 {
     use HasFactory;
 
-    protected $fillabl = [
+    protected $fillable = [
+        'id',            // Allow mass assignment of 'id'
         'order_date',
         'amount',
         'customer_id',
-        'salesman_id'
+        'salesmans_id',
     ];
 
     public function scopeSearch($query, $search)
@@ -24,11 +25,11 @@ class Order extends Model
 
     public function customer()
     {
-        return $this->belongsTo(Customer::class);
+        return $this->belongsTo(Customer::class, 'customer_id');
     }
 
     public function salesman()
     {
-        return $this->belongsTo(Salesmans::class);
+        return $this->belongsTo(Salesmans::class, 'salesmans_id');
     }
 }
